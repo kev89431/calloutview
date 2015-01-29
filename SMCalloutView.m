@@ -17,7 +17,7 @@
 
 #define CALLOUT_DEFAULT_CONTAINER_HEIGHT 44 // height of just the main portion without arrow
 #define CALLOUT_SUB_DEFAULT_CONTAINER_HEIGHT 52 // height of just the main portion without arrow (when subtitle is present)
-#define CALLOUT_MIN_WIDTH 40 // minimum width of system callout
+#define CALLOUT_MIN_WIDTH 30 // minimum width of system callout
 #define TITLE_HMARGIN 12 // the title/subtitle view's normal horizontal margin from the edges of our callout view or from the accessories
 #define TITLE_TOP 11 // the top of the title view when no subtitle is present
 #define TITLE_SUB_TOP 4 // the top of the title view when a subtitle IS present
@@ -595,6 +595,7 @@ static UIImage *blackArrowImage = nil, *whiteArrowImage = nil, *grayArrowImage =
         self.arrowBorderView = [[UIImageView alloc] initWithImage:blackArrowImage];
         self.arrowBorderView.alpha = 0.1;
         self.arrowBorderView.$y = 0.5;
+        self.arrowBorderView.frame = self.arrowView.frame;
         
         [self addSubview:self.containerView];
         [self.containerView addSubview:self.containerBorderView];
